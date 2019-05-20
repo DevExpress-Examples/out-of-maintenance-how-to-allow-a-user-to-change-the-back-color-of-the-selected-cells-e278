@@ -32,17 +32,14 @@ namespace dxSample
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carsDBDataSet = new dxSample.CarsDBDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTrademark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colModel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.carsTableAdapter = new dxSample.CarsDBDataSetTableAdapters.CarsTableAdapter();
+            this.colCar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUser = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAllDay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,20 +60,14 @@ namespace dxSample
             // carsBindingSource
             // 
             this.carsBindingSource.DataMember = "Cars";
-            this.carsBindingSource.DataSource = this.carsDBDataSet;
-            // 
-            // carsDBDataSet
-            // 
-            this.carsDBDataSet.DataSetName = "CarsDBDataSet";
-            this.carsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID,
-            this.colTrademark,
-            this.colModel,
-            this.colPrice});
+            this.colCar,
+            this.colUser,
+            this.colAllDay});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.MultiSelect = true;
@@ -93,31 +84,27 @@ namespace dxSample
             // 
             // colTrademark
             // 
-            this.colTrademark.Caption = "Trademark";
-            this.colTrademark.FieldName = "Trademark";
-            this.colTrademark.Name = "colTrademark";
-            this.colTrademark.Visible = true;
-            this.colTrademark.VisibleIndex = 0;
+            this.colCar.Caption = "Car";
+            this.colCar.FieldName = "Car";
+            this.colCar.Name = "colCar";
+            this.colCar.Visible = true;
+            this.colCar.VisibleIndex = 0;
             // 
             // colModel
             // 
-            this.colModel.Caption = "Model";
-            this.colModel.FieldName = "Model";
-            this.colModel.Name = "colModel";
-            this.colModel.Visible = true;
-            this.colModel.VisibleIndex = 1;
+            this.colUser.Caption = "User";
+            this.colUser.FieldName = "User";
+            this.colUser.Name = "colUser";
+            this.colUser.Visible = true;
+            this.colUser.VisibleIndex = 1;
             // 
             // colPrice
             // 
-            this.colPrice.Caption = "Price";
-            this.colPrice.FieldName = "Price";
-            this.colPrice.Name = "colPrice";
-            this.colPrice.Visible = true;
-            this.colPrice.VisibleIndex = 2;
-            // 
-            // carsTableAdapter
-            // 
-            this.carsTableAdapter.ClearBeforeFill = true;
+            this.colAllDay.Caption = "AllDay";
+            this.colAllDay.FieldName = "AllDay";
+            this.colAllDay.Name = "colAllDay";
+            this.colAllDay.Visible = true;
+            this.colAllDay.VisibleIndex = 2;
             // 
             // Form1
             // 
@@ -130,7 +117,6 @@ namespace dxSample
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -140,13 +126,11 @@ namespace dxSample
 
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private CarsDBDataSet carsDBDataSet;
         private System.Windows.Forms.BindingSource carsBindingSource;
-        private dxSample.CarsDBDataSetTableAdapters.CarsTableAdapter carsTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colTrademark;
-        private DevExpress.XtraGrid.Columns.GridColumn colModel;
-        private DevExpress.XtraGrid.Columns.GridColumn colPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colCar;
+        private DevExpress.XtraGrid.Columns.GridColumn colUser;
+        private DevExpress.XtraGrid.Columns.GridColumn colAllDay;
         private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
