@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -7,8 +7,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{DF83B196-FD3E-4974-93AF-D84068D64530}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>dxSample</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -18,6 +26,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
+    <NoWarn>42353,42354,42355</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -26,23 +35,38 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
+    <NoWarn>42353,42354,42355</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>D:\CodeCentral\DLLs\8.1.6\DevExpress.Data.v8.1.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.Printing.v13.1.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Utils.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>D:\CodeCentral\DLLs\8.1.6\DevExpress.Utils.v8.1.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.Data.v13.1.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>D:\CodeCentral\DLLs\8.1.6\DevExpress.XtraEditors.v8.1.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.Utils.v13.1.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v8.1, Version=8.1.6.0, Culture=neutral, PublicKeyToken=9B171C9FD64DA1D1, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>D:\CodeCentral\DLLs\8.1.6\DevExpress.XtraGrid.v8.1.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.XtraEditors.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.XtraPrinting.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.XtraGrid.v13.1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -52,11 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarsDBDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CarsDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -77,19 +96,9 @@
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="CarsDBDataSet.xsc">
-      <DependentUpon>CarsDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CarsDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CarsDBDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CarsDBDataSet.xss">
-      <DependentUpon>CarsDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
@@ -99,11 +108,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CarsDB.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
